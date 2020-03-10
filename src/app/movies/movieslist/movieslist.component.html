@@ -1,0 +1,65 @@
+
+<section class="main-content " id="main-content">
+  <div class="container-fluid">
+      <!-- <div class="row pb-3">
+         <div class="col-md-12 no-margin">
+             <h4>We got the best results for you</h4>
+             <small>Here is a list of 120 results to choose from</small>
+         </div>
+      </div> -->
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xl-4 mb-2" *ngFor="let item of imovies; let i=index">
+            <div class="row">
+                <div class="col-md-4 no-margin  row-eq-height">
+                    <img class="image border" src="{{item.posterurl}}" alt=" {{item.title}}" height="220" width="200" >
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="col-md-8 card-body border pt-1 pb-0" style="height: 220px;">
+                    <h4 class="text-success"> {{item.title}}</h4>
+                    <!-- <p>Actors: {{item.actors}}</p> -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            Actors: {{item.actors}}
+                        </li>
+                        <li class="list-inline-item">
+                            <small><a >Date: {{item.releaseDate}}</a></small>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="">|</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <small><a>Geners: {{item.genres}}</a></small>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="">|</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <small> <a >Duration: {{item.duration|slice:2}}</a></small>
+                        <li class="list-inline-item">
+                            <a href="">|</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-sm btn-info btn-outline-info mr-3" (click)="openModal(template)">View Story..</button>
+                    <button type="button" class="btn btn-sm btn-info btn-outline-info">Download</button>
+                    <div class="clearfix"></div>
+
+                </div>
+                <ng-template #template>
+                    <div class="modal-header">
+                      <h4 class="modal-title text-info pull-left">Movie : {{item.title}}</h4>
+                      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Story:</h5>
+                        <p class="text-justify">{{item.storyline}}.</p>
+                    </div>
+                </ng-template>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>

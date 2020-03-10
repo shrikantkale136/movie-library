@@ -1,0 +1,23 @@
+<section class="banner py-5 " id="banner">
+    <div class="container text-white text-center py-5 my-5">
+        <div class="row text-white text-center">
+            <div class="col-md-12">
+                <h1>All You Need Is Here & Classified</h1>
+                <p>Browse from more than 15,000,000 movies while new ones come on daily bassis</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto offset-sm-4">
+                <div class="form-group form-group-sm form-horizontal">
+                    <select id="inputState" class="form-control" >
+                        <option selected disabled>Select Category</option>
+                        <option *ngFor="let item of lang">{{item}}</option>                          
+                    </select>
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-success btn-block">Search Free Movies</button>
+            </div>
+        </div> 
+    </div>
+</section>
